@@ -1,6 +1,7 @@
 package com.zero.accelerator.overlay
 
 import android.content.Context
+import android.view.ContextThemeWrapper
 import android.graphics.PixelFormat
 import android.os.Handler
 import android.os.Looper
@@ -22,7 +23,10 @@ import kotlin.math.roundToInt
  * slide-down HUD sidebar. Everything lives in TYPE_APPLICATION_OVERLAY windows
  * that are added only while the bound game is in the foreground.
  */
-class GameOverlay(private val ctx: Context) {
+class GameOverlay(baseCtx: Context) {
+
+    // Services have no app theme; wrap so ?attr/selectableItemBackground etc. resolve.
+    private val ctx: Context = ContextThemeWrapper(baseCtx, R.style.Theme_Zero)
 
     private val wm = ctx.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     private val handler = Handler(Looper.getMainLooper())

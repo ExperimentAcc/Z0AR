@@ -2,7 +2,7 @@ package com.zero.accelerator
 
 import android.os.Build
 import android.view.accessibility.AccessibilityEvent
-import android.view.accessibility.AccessibilityService
+import android.accessibilityservice.AccessibilityService
 import com.zero.accelerator.model.PerfMode
 import com.zero.accelerator.overlay.GameOverlay
 import com.zero.accelerator.prefs.AppPrefs
@@ -31,7 +31,8 @@ class GameAccessibilityService : AccessibilityService() {
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
-        if (event?.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
+        if (event == null) return
+        if (event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
         val pkg = event.packageName?.toString() ?: return
         // Ignore our own overlay windows.
         if (pkg == packageName) return
@@ -84,7 +85,7 @@ class GameAccessibilityService : AccessibilityService() {
 
     override fun onDestroy() {
         super.onDestroy()
-        overlay.teardown()
+        if (::overlay.isInitialized) overlay.teardown()
         WakeLockManager.release()
     }
 }

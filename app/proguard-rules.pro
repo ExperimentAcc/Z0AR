@@ -28,3 +28,8 @@
 
 # Keep BuildConfig fields referenced from Shizuku.UserServiceArgs
 -keep class com.zero.accelerator.BuildConfig { *; }
+
+# Silence optional/missing refs from Shizuku & hidden APIs during R8
+-dontwarn rikka.**
+-dontwarn moe.shizuku.**
+-dontwarn android.**

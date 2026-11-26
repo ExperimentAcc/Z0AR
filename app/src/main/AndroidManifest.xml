@@ -70,15 +70,6 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
 
-        <!-- Privileged user-service, executed by Shizuku as shell/root. -->
-        <service
-            android:name=".optimizer.OptimizerUserService"
-            android:exported="false"
-            android:permission="moe.shizuku.manager.permission.API_V23">
-            <intent-filter>
-                <action android:name="dev.rikka.shizuku.UserService" />
-            </intent-filter>
-        </service>
 
     </application>
 

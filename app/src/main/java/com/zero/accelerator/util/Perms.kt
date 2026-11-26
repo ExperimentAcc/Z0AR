@@ -78,7 +78,9 @@ object Perms {
     fun openShizuku(ctx: Context) {
         val intent = ctx.packageManager.getLaunchIntentForPackage(C.SHIZUKU_MANAGER_PKG)
             ?: ctx.packageManager.getLaunchIntentForPackage(C.SHIZUKU_PKG)
-        intent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        ctx.startActivity(intent)
+        if (intent != null) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            ctx.startActivity(intent)
+        }
     }
 }

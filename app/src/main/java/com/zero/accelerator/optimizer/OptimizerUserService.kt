@@ -16,7 +16,7 @@ import java.io.BufferedReader
  *   1 BALANCED : full RAM purge + cache trim + active standby bucket.
  *   2 MONSTER  : extensive purge + performance governor + power-mode 0.
  */
-class OptimizerUserService : IOptimizerService.Stub() {
+class OptimizerUserService : IOptimizerService.Stub {
 
     // Shizuku v13 may hand us a Context; the no-arg constructor is required.
     @Suppress("unused")
