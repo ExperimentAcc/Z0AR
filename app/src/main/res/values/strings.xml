@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">ZERO ACCELERATOR</string>
+
+    <!-- Accessibility service description -->
+    <string name="acc_service_desc">ZERO ACCELERATOR detects when your selected game enters the foreground and quietly runs an optimization routine through Shizuku, then shows a launch banner and an edge control for the in-game HUD.</string>
+
+    <!-- Main screen -->
+    <string name="section_shizuku">Shizuku</string>
+    <string name="section_permissions">Permissions</string>
+    <string name="section_target">Bound target</string>
+    <string name="section_mode">Performance mode</string>
+    <string name="section_whitelist">Never stop (whitelist)</string>
+
+    <string name="shizuku_status">Status: %1$s</string>
+    <string name="shizuku_connect">Connect / Request</string>
+    <string name="shizuku_connected">Connected</string>
+    <string name="shizuku_not_installed">Shizuku not installed</string>
+    <string name="shizuku_not_running">Shizuku not running</string>
+    <string name="shizuku_denied">Permission denied</string>
+    <string name="shizuku_ready">Ready</string>
+
+    <string name="perm_accessibility">Accessibility service</string>
+    <string name="perm_overlay">Display over other apps</string>
+    <string name="perm_notifications">Notifications</string>
+    <string name="perm_dnd">Do Not Disturb access</string>
+
+    <string name="target_none">No game bound — tap to choose</string>
+    <string name="target_pick">Choose target game</string>
+    <string name="whitelist_empty">Nothing whitelisted</string>
+    <string name="whitelist_add">Add app</string>
+    <string name="whitelist_hint">Default keyboard &amp; launcher are always protected.</string>
+
+    <string name="mode_low">LOW</string>
+    <string name="mode_balanced">BALANCED</string>
+    <string name="mode_monster">MONSTER</string>
+
+    <string name="mode_low_desc">Emerald · force-stop heavy apps · keep screen on</string>
+    <string name="mode_balanced_desc">Electric Blue · full RAM purge · trim caches · active bucket</string>
+    <string name="mode_monster_desc">Crimson · aggressive purge · performance lock · 10-min wake</string>
+
+    <!-- Lock dialog -->
+    <string name="lock_title">Shizuku required</string>
+    <string name="lock_body">ZERO ACCELERATOR needs Shizuku to perform privileged optimizations. Start Shizuku, then grant access.</string>
+    <string name="lock_grant">Grant permission</string>
+    <string name="lock_install">Get Shizuku</string>
+    <string name="lock_retry">Retry</string>
+
+    <!-- Banner -->
+    <string name="banner_title">ZERO ACCELERATOR</string>
+    <string name="banner_assisted">ASSISTED BY %1$s</string>
+
+    <!-- Sidebar -->
+    <string name="hud_cpu">CPU</string>
+    <string name="hud_gpu">GPU</string>
+    <string name="hud_fps">FPS</string>
+    <string name="hud_session">SESSION</string>
+    <string name="hud_ram">RAM CLEAN</string>
+    <string name="hud_dnd">DND</string>
+    <string name="hud_close">CLOSE</string>
+    <string name="hud_na">N/A</string>
+</resources>
