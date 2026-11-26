@@ -1,0 +1,45 @@
+name: Unzip ZeroAccelerator
+
+on:
+  workflow_dispatch: # Only runs when triggered manually
+
+permissions:
+  contents: write # Required to push extracted files back to the repo
+
+jobs:
+  extract-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract contents of ZeroAccelerator subfolder
+        run: |
+          # Create a temporary directory for extraction
+          mkdir -p temp_extract
+          
+          # Unzip the archive into the temp directory
+          unzip -q ZeroAccelerator.zip -d temp_extract
+          
+          # Move all files (including hidden dotfiles) from inside the subfolder to the repo root
+          shopt -s dotglob nullglob
+          mv temp_extract/ZeroAccelerator/* .
+          
+          # Clean up the temporary directory
+          rm -rf temp_extract
+
+      - name: Commit and push extracted files
+        run: |
+          git config --local user.email "github-actions[bot]@://github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add .
+          
+          # Only commit if there are new or modified files
+          if ! git diff --staged --quiet; then
+            git commit -m "Extract ZeroAccelerator.zip contents"
+            git push
+          else
+            echo "No changes to commit."
+          fi
