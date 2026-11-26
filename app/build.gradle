@@ -42,7 +42,7 @@ android {
     }
 
     // Drop every locale except English to keep resources minimal.
-    resourceConfigurations "en"
+    resourceConfigurations += ["en"]
 
     packagingOptions {
         resources {
