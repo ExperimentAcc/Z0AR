@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZERO ACCELERATOR</string>
+    <string name="acc_service_desc">ZERO ACCELERATOR detects when your selected game opens, shows a boot splash, runs an optional cleanup through Shizuku, and adds a slide-in game panel on the left edge. It only reads which app is on screen. It never reads screen content.</string>
+</resources>
