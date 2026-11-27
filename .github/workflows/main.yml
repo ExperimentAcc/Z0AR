@@ -1,8 +1,6 @@
 name: Unzip Workflows
 
 on:
-    paths:
-      - '**.zip'
   workflow_dispatch:
 
 permissions:
